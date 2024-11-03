@@ -22,7 +22,7 @@ const List = ({ list, archiveList }) => {
         );
         setCards(res.data);
       } catch (error) {
-        console.log(error);
+        
         enqueueSnackbar(`Failed to load cards: ${error.message}`, {
           variant: "error",
         });
@@ -38,7 +38,7 @@ const List = ({ list, archiveList }) => {
         );
         setCards([...cards, { id: res.data.id, name: res.data.name }]);
       } catch (error) {
-        console.log(error);
+        
         enqueueSnackbar(`Failed to create card: ${error.message}`, {
           variant: "error",
         });

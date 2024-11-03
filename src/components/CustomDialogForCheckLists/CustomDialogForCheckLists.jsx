@@ -31,7 +31,7 @@ const CustomDialog = ({ openModal, setOpenModal, cardId, cardName }) => {
         );
         setCheckLists(res.data);
       } catch (error) {
-        console.error("Error getting checklist", error);
+        
         enqueueSnackbar(`Failed to get checklists: ${error.message}`, {
           variant: "error",
         });
@@ -47,10 +47,10 @@ const CustomDialog = ({ openModal, setOpenModal, cardId, cardName }) => {
         const res = await axios.post(
           `${baseURL}/cards/${cardId}/checklists?name=${checkListNameInput}&key=${apiKey}&token=${token}`
         );
-        console.log(res.data);
+        
         setCheckLists([...checkLists, res.data]);
       } catch (error) {
-        console.error("Error creating checklist", error);
+        
         enqueueSnackbar(`Failed to create checklist: ${error.message}`, {
           variant: "error",
         });
@@ -71,7 +71,7 @@ const CustomDialog = ({ openModal, setOpenModal, cardId, cardName }) => {
         );
       }
     } catch (error) {
-      console.error("Error deleting checklist", error);
+     
       enqueueSnackbar(`Failed to delete checklist: ${error.message}`, {
         variant: "error",
       });

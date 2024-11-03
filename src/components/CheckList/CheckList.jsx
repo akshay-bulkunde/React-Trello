@@ -21,7 +21,7 @@ const CheckList = ({ checkList, deleteCheckList }) => {
         );
         setCheckItems([...checkItems, res.data]);
       } catch (error) {
-        console.log("error during createCheckItem", error);
+        
         enqueueSnackbar(`Failed to add check item: ${error.message}`, {
           variant: "error",
         });
@@ -54,7 +54,7 @@ const CheckList = ({ checkList, deleteCheckList }) => {
         setCheckItems(updatedCheckItems);
       }
     } catch (error) {
-      console.error("Error during updateCheckItem", error);
+      
       enqueueSnackbar(`Failed to update check item: ${error.message}`, {
         variant: "error",
       });
@@ -70,7 +70,7 @@ const CheckList = ({ checkList, deleteCheckList }) => {
         setCheckItems(checkItems.filter((items) => items.id != checkItemId));
       }
     } catch (error) {
-      console.error("Error during deleteCheckItem", error);
+     
       enqueueSnackbar(`Failed to delete check item: ${error.message}`, {
         variant: "error",
       });

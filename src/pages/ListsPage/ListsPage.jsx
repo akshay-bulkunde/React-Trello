@@ -21,7 +21,7 @@ const ListsPage = () => {
         );
         setLists([...lists, { id: res.data.id, name: res.data.name }]);
       } catch (error) {
-        console.error(error);
+        
         enqueueSnackbar(`Failed to create list: ${error.message}`, {
           variant: "error",
         });
@@ -36,7 +36,7 @@ const ListsPage = () => {
       );
       setLists(res.data);
     } catch (error) {
-      console.error("Error fetching lists and cards:", error);
+      
       enqueueSnackbar(`Failed to load lists: ${error.message}`, {
         variant: "error",
       });
@@ -52,7 +52,7 @@ const ListsPage = () => {
         setLists(lists.filter((list) => list.id != listId));
       }
     } catch (error) {
-      console.error("Error archiving list", error);
+      
       enqueueSnackbar(`Failed to archive list: ${error.message}`, {
         variant: "error",
       });
