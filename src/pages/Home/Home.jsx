@@ -25,10 +25,10 @@ const Home = () => {
       const response = await axios.get(
         `${baseURL}/members/me/boards?key=${apiKey}&token=${token}&filter=open`
       );
-      console.log(response.data);
+      
       setOpenBoards(response.data);
     } catch (error) {
-      console.error(error);
+      
       enqueueSnackbar(`Failed to load boards: ${error.message}`, {
         variant: "error",
       });
@@ -38,7 +38,7 @@ const Home = () => {
   };
 
   const createBoard = async () => {
-    console.log(boardNameInput);
+   
     try {
       const res = await axios.post(
         `${baseURL}/boards/?name=${boardNameInput}&key=${apiKey}&token=${token}`
